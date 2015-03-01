@@ -12,24 +12,80 @@ package ch.heigvd.res.lab00;
  * 
  * @author Olivier Liechti
  */
-public class Application {
+public class Application
+{
+	private String message;
 
-  private String message;
+	public Application() {
+		this("HEIG-VD rocks!");
+	}
 
-  public Application() {
-    this("HEIG-VD rocks!");
-  }
+	public Application(String message) {
+		this.message = message;
+	}
 
-  public Application(String message) {
-    this.message = message;
-  }
+	public String getMessage() {
+		return message;
+	}
 
-  public String getMessage() {
-    return message;
-  }
+	public int add(int a, int b) {
+		return a + b;
+	}
+}
 
-  public int add(int a, int b) {
-    return a + b;
-  }
+interface IInstrument
+{
+	String play();
+	int getSoundVolume();
+	String getColor();
+}
 
+class Trumpet implements IInstrument
+{
+	private String sound;
+	private int soundVolume;
+	private String color;
+
+	public Trumpet() {
+		this.sound = "pouet";
+		this.soundVolume = 3;
+		this.color = "golden";
+	}
+
+	public String play() {
+		return this.sound;
+	}
+
+	public int getSoundVolume() {
+		return soundVolume;
+	}
+
+	public String getColor() {
+		return this.color;
+	}
+}
+
+class Flute implements IInstrument
+{
+	private String sound;
+	private int soundVolume;
+	private String color;
+
+	public Flute() {
+		this.sound = "tuuut";
+		this.soundVolume = 1;
+		this.color = "wooden";
+	}
+
+	public String play() {
+		return this.sound;
+	}
+
+	public int getSoundVolume() {
+		return soundVolume;
+	}
+
+	public String getColor() {
+		return this.color;
+	}
 }
